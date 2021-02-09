@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Informazioni Dipinto</title>
+</head>
+<body>
+	<div id="contenitore">	
+		<div>
+	    	<p th:text="'Titolo: ' + ${painting.title}" />
+	    </div>
+		<div>
+	    	<p th:text="'Anno: ' + ${painting.year}" />
+	    </div>
+	    <div>
+	    	<p th:text="'Tecnica: ' + ${painting.technique}" />
+	    </div>
+	    <div>
+	    	<p th:text="'Dimensioni: ' + ${painting.size}" />
+	    </div>
+	    <div>
+	    	<p th:text="'Autore: ' + ${painting.artist.firstName}+ ' ' + ${painting.artist.lastName}" />
+	    </div>
+	</div>
+</body>
+</html>

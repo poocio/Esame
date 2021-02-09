@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Years</title>
+</head>
+<body>
+
+<h1 align="center">Opere dell'anno </h1>
+
+                <table cellspacing="25">
+                    <thead>
+                    <tr>
+                    	<th>Artist</th>
+                        <th>Titolo</th>
+                        <th>Anno</th>
+                        <th>Tecnica</th>
+                        <th>Dimensioni</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr th:each="painting : ${paintingsByYear}">
+                     	<td th:text="${painting.artist.firstName}"></td>
+                        <td th:text="${painting.title}"></td>
+                        <td th:text="${painting.year}"></td>
+                        <td th:text="${painting.technique}"></td>
+                        <td th:text="${painting.size}"></td>
+
+                        <td style="background-color:#bbb"></td>
+              
+                    </tr>
+                    </tbody>
+                    <h3 class="header__menu__item"><a href="/home">Home</a></h3>
+</body>
+</html>
+
+
+

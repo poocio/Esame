@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Artists</title>
+</head>
+<body>
+
+    <h1 align="center">Artists</h1>
+
+    <table cellspacing="25">
+     <thead>
+      <tr>
+       <th>Nome</th>
+       <th>Cognome</th>
+       <th>Nazionalità</th>
+       <th>Data di nascita</th>
+       <th>Data di morte</th>
+
+      </tr>
+     </thead>
+     <tbody>
+
+      <tr th:each="artist : ${artists}">
+          <td th:text="${artist.firstName}"></td>
+          <td th:text="${artist.lastName}"></td>
+          <td th:text="${artist.nation}"></td>
+          <td th:text="${artist.dateOfBirth}"></td>
+          <td th:text="${artist.dateOfDeath}"></td>
+       <td style="background-color: #bbb"></td>
+          <td>
+            <div>
+
+                <a th:href="@{'/paintingsByArtist/{id}'(id=${artist.id})}" class="button">Opere</a>
+
+			</div>
+     	  </td>
+       
+      </tr>
+     </tbody>
+    </table>
+</body>
+</html>

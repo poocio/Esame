@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+</head>
+<body>
+ 
+ <tbody>
+
+   <tr th:each="painting : ${paintings}">
+    <td th:text="${painting.title}"></td>
+    <td style="background-color: #bbb"></td>
+    <a th:href="@{'/paintingsById/{id}'(id=${painting.id})}"
+       class="button">Opere</a>
+    <div>
+    <form method="POST" sec:authorize="hasAuthority('ADMIN')" th:action="@{/admin/paintings/{id}/remove(id=${painting.id})}">
+    <button type="submit" name="submit" value="value"> DELETE </button>
+                         
+    </form>
+       
+
+     </div>
+   </tr>
+  </tbody>
+
+</body>
+</html>

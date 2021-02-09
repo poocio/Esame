@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Gallery</title>
+</head>
+    <h1>New Opera</h1>
+      <div class="portlet-body form">
+         <form id="artistForm" th:action="@{/admin/addArtist}" th:object="${artist}" method="POST">                                                            
+             <div class="form-body">
+                 <div class="form-group" th:classappend="${#fields.hasErrors('firstName')} ? has-error : ''">
+                     <label>firstName</label>                                                                
+                     <div th:classappend="${#fields.hasErrors('firstName')} ? 'input-icon right' : ''">
+                         <i th:if="${#fields.hasErrors('firstName')}" class="fa fa-exclamation tooltips" data-original-title="please enter a valid firstName" data-container="body"></i>
+                         <input type="text" class="form-control" maxlength="32" th:field="*{firstName}" placeholder="Between 1 and 32 characters"/>
+                         <span th:if="${#fields.hasErrors('firstName')}" class="help-block" th:errors="*{firstName}"></span>
+                     </div>
+                 </div>                                                                                               
+                <div class="form-group" th:classappend="${#fields.hasErrors('lastName')} ? has-error : ''">
+                     <label>lastName</label>                                                                
+                     <div th:classappend="${#fields.hasErrors('lastName')} ? 'input-icon right' : ''">
+                         <i th:if="${#fields.hasErrors('lastName')}" class="fa fa-exclamation tooltips" data-original-title="please enter a valid number for the Year field" data-container="body"></i>
+                         <input type="text" class="form-control" maxlength="10" th:field="*{lastName}" placeholder="A number between 1 and 10"/>
+                         <span th:if="${#fields.hasErrors('lastName')}" class="help-block" th:errors="*{lastName}"></span>
+                     </div>
+                 </div>                                               
+                  <div class="form-group" th:classappend="${#fields.hasErrors('nation')} ? has-error : ''">
+                     <label>nation</label>                                                                
+                     <div th:classappend="${#fields.hasErrors('nation')} ? 'input-icon right' : ''">
+                         <i th:if="${#fields.hasErrors('nation')}" class="fa fa-exclamation tooltips" data-original-title="please enter a valid nation" data-container="body"></i>
+                         <input type="text" class="form-control" maxlength="10" th:field="*{nation}" placeholder="Between 1 and 32 characters"/>
+                         <span th:if="${#fields.hasErrors('nation')}" class="help-block" th:errors="*{nation}"></span>
+                     </div>
+                 </div>  
+                   <div class="form-group" th:classappend="${#fields.hasErrors('dateOfBirth')} ? has-error : ''">
+                     <label>dateOfBirth</label>                                                                
+                     <div th:classappend="${#fields.hasErrors('dateOfBirth')} ? 'input-icon right' : ''">
+                         <i th:if="${#fields.hasErrors('dateOfBirth')}" class="fa fa-exclamation tooltips" data-original-title="please enter a valid dateOfBirth" data-container="body"></i>
+                         <input type="date" class="form-control" maxlength="10" th:field="*{dateOfBirth}" placeholder="Between 1 and 32 characters"/>
+                         <span th:if="${#fields.hasErrors('dateOfBirth')}" class="help-block" th:errors="*{dateOfBirth}"></span>
+                     </div>
+                 </div> 
+                 <div class="form-group" th:classappend="${#fields.hasErrors('dateOfDeath')} ? has-error : ''">
+                     <label>dateOfDeath</label>                                                                
+                     <div th:classappend="${#fields.hasErrors('dateOfDeath')} ? 'input-icon right' : ''">
+                         <i th:if="${#fields.hasErrors('dateOfDeath')}" class="fa fa-exclamation tooltips" data-original-title="please enter a valid dateOfDeath" data-container="body"></i>
+                         <input type="date" class="form-control" maxlength="10" th:field="*{dateOfDeath}" placeholder="Between 1 and 32 characters"/>
+                         <span th:if="${#fields.hasErrors('dateOfDeath')}" class="help-block" th:errors="*{dateOfDeath}"></span>
+                     </div>
+                 </div> 
+             </div>
+             <div class="form-actions">
+                 <button type="submit" class="btn blue">Submit</button>
+             </div>
+         </form>
+     </div>
+
+
+</body>
+</html>
+
+
