@@ -57,8 +57,8 @@ public class PaintingController {
 	public String opereByTitolo(@PathVariable long id,
 						Model model) {
 		Painting paintings = paintingService.findById(id);
-		model.addAttribute("paintingsById", paintings);
-		return "paintingsById";
+		model.addAttribute("painting", paintings);
+		return "showPainting";
 	}
 	
 	@RequestMapping(value = "/allPaintings", method = RequestMethod.GET)
@@ -66,6 +66,9 @@ public class PaintingController {
 	  List<Painting> paintings = paintingService.findAll();
 	  model.addAttribute("paintings", paintings);
 	  return "paintings";
+	  
+	  
 	 }
 
+	
 }

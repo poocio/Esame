@@ -35,6 +35,15 @@ public class ArtistController {
 		model.addAttribute("paintingsByArtist", paintings);
 		return "paintingsByArtist";
 	}
+
+	
+	@RequestMapping(value = "/artistById/{id}", method = RequestMethod.GET)
+	public String opereByTitolo(@PathVariable long id,
+						Model model) {
+		Artist artist = artistService.findById(id);
+		model.addAttribute("artist", artist);
+		return "showArtist";
+	}
 	
 	@RequestMapping(value = "researchArtist", method = RequestMethod.GET)
 	public String getArtist(Model model) {

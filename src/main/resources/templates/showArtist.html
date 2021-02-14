@@ -10,17 +10,16 @@
 <body>
 <aside class="profile-card">
   <header>
-    <a target="_blank" href="/img/painting.jpg/#}">
-      <img th:src="@{/img/painting.jpg}" class="hoverZoomLink">
+    <a target="_blank" href="/img/avatar.jpg/#}">
+      <img th:src="@{/img/avatar.jpg}" class="hoverZoomLink">
     </a>
     <h1>
-            <p th:text="${painting.title}" />
+            <p th:text="${artist.firstName}+ ' ' + ${artist.lastName}" />
           </h1>
     <h2>
-            <p th:text="'Anno: ' + ${painting.year}" />
-            <p th:text="'Tecnica: ' + ${painting.technique}" />
-            <p th:text="'Dimensioni: ' + ${painting.size}" />
-            <p th:text="'Autore: ' + ${painting.artist.firstName}+ ' ' + ${painting.artist.lastName}" />
+            <p th:text="'Nazione: ' + ${artist.nation}" />
+            <p th:text="'Data di nascita: ' + ${artist.dateOfBirth}" />
+            <p th:if="${artist.dateOfDeath ne null}" th:text="'Data di morte: ' + ${artist.dateOfDeath}" />
           </h2>
   </header>
   <div class="home">

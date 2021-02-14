@@ -3,21 +3,16 @@
  xmlns:th="https://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>Title</title>
+<title>Galleria SIW</title>
+<link rel="stylesheet"  href="/css/home.css">
 </head>
 <body>
- 
- <h4>
-  <a href="/allPaintings">All paintings</a>
- </h4>
-
- <h4>
-  <a href="/researchYear">Research by Year</a>
- </h4>
- <h4>
-  <a href="/researchArtist">Research by Artist</a>
- </h4>
-
-
+	 <a id="back" href="/home" class="fourth">Home Page</a>
+	<div>
+		<h1 th:text="'Effettua la tua ricerca'"></h1>
+		<a class="first" href="/allPaintings">Tutti i dipinti</a>
+		<a class="second" href="/researchYear">Ricerca per anno</a>
+		<a class="third" href="/researchArtist">Ricerca per autore</a>
+ 	</div>
 </body>
 </html>

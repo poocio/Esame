@@ -9,6 +9,8 @@ import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+
 import javax.sql.DataSource;
 
 import static it.uniroma3.siw.model.Credentials.ADMIN_ROLE;
@@ -29,7 +31,7 @@ public class AuthConfiguration extends WebSecurityConfigurerAdapter {
                 
                 .authorizeRequests()
                
-                .antMatchers(HttpMethod.GET, "/", "/index", "/login", "/users/register").permitAll()
+                .antMatchers(HttpMethod.GET, "/", "/index", "/login", "/users/register", "/css/**", "/img/**").permitAll()
           
                 .antMatchers(HttpMethod.POST, "/login", "/users/register").permitAll()
                
@@ -39,12 +41,15 @@ public class AuthConfiguration extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated()
 
                 .and().formLogin()
+                .loginPage("/login")
+                .permitAll()
               
                 .defaultSuccessUrl("/home")
 
-                .and().logout()
-                .logoutUrl("/logout")              
-                .logoutSuccessUrl("/index");        
+                .and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+                
+                .logoutSuccessUrl("/index");
+                      
     }
 
     

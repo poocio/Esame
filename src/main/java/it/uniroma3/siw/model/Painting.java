@@ -9,6 +9,7 @@ import javax.persistence.ManyToOne;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Null;
 import javax.validation.constraints.Size;
 
 @Entity
@@ -18,25 +19,25 @@ public class Painting {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	@Size(min=1, max=32, message="First name must be between 1 and 32 characters")
+	@Size(min=2, max=100, message="Il titolo deve essere compreso tra 2 e 100 caratteri")
 	@Column(nullable = false)
 	private String title;
 	
-	@Size(min=1, max=10, message="Technique must be between 1 and 10 characters")
+	@Size(min=2, max=100, message="La tecnica deve essere compresa tra 2 e 100 caratteri")
 	@Column(nullable = false)
 	private String technique;
 	
-	@Size(min=1, max=10, message="Size must be between 1 and 10 characters")
+	@Size(min=2, max=100, message="La dimensione deve essere compresa tra 2 e 100 caratteri")
 	@Column(nullable = false)
 	private String size;
 	
-	@NotNull(message="Please enter a number for the Year field")
 	@Column(nullable = false)
 	private int year;
 	
 	@ManyToOne
 	private Artist artist; 
 
+	
 	public Painting() {
 		
 	}

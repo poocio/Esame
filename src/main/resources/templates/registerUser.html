@@ -3,42 +3,63 @@
       xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="https://www.thymeleaf.org">
 <head>
-    <title>Gallery</title>
+    <title>Galleria SIW</title>
+    <link rel="stylesheet"  href="/css/formLog.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
 </head>
 
 <body>
-<h1>Register new User</h1>
-<form id = "registerUserForm"
-      th:action="@{/users/register}"
-      method="POST">
+  <a href="/index" class="btn btn-outline-success">Indietro</a>
+  <header class="ScriptHeader">
+    <div class="rt-container">
+      <div class="col-rt-12">
+          <div class="rt-heading">
+              <h1>Registrazione Galleria SIW</h1>
+            </div>
+        </div>
+    </div>
+</header>
+  <section>
+    <div class="rt-container">
+          <div class="col-rt-12">
+              <div class="Scriptcontent">
 
-    <table>
-        <tr>
-            <td><label for="userNameInput">Username</label>
-            <td><input id=userNameInput type="text" th:field="${credentialsForm.userName}" placeholder="USERNAME" required/></td>
-            <td th:if="${#fields.hasErrors('credentialsForm.userName')}" th:errors="${credentialsForm.userName}" th:style="'color:red'"></td>
-        </tr>
-        <tr>
-            <td><label for="passwordInput">Password</label></td>
-            <td><input id="passwordInput" type="password" th:field="${credentialsForm.password}" placeholder="PASSWORD"/></td>
-            <td th:if="${#fields.hasErrors('credentialsForm.password')}" th:errors="${credentialsForm.password}" th:style="'color:red'"></td>
-        </tr>
-        <tr>
-            <td><label for="firstNameInput">First Name</label></td>
-            <td><input id="firstNameInput" type="text" th:field="${userForm.firstName}" placeholder="FIRST NAME"/></td>
-            <td th:if="${#fields.hasErrors('userForm.firstName')}" th:errors="${userForm.firstName}" th:style="'color:red'"></td>
-        </tr>
-        <tr>
-            <td><label for="lastNameInput">Last Name</label></td>
-            <td><input id="lastNameInput" type="text" th:field="${userForm.lastName}" placeholder="LAST NAME"/></td>
-            <td th:if="${#fields.hasErrors('userForm.lastName')}" th:errors="${userForm.lastName}" th:style="'color:red'"></td>
-        </tr>
-        <tr>
-            <td>
-                <button type="submit">Register</button>
-            </td>
-        </tr>
-    </table>
-</form>
+             <form th:action="@{/users/register}" method="post" class="codehim-form">
+        <div class="form-title">
+            <div class="user-icon gr-bg">
+            <i class="fa fa-user-plus"></i>
+            </div>
+     <h2>Registrati</h2>
+            </div>
+            
+       <label><i class="fa fa-user"></i> Username:
+              <input id=userNameInput type="text" class="cm-input" th:field="${credentialsForm.userName}" placeholder="Mike26" />
+              <p th:if="${#fields.hasErrors('credentialsForm.userName')}" th:errors="${credentialsForm.userName}" th:style="'color:#CB3234'"></p>
+             </label>
+
+         <label><i class="fa fa-key"></i> Password:
+              <input id="passwordInput" type="password" class="cm-input" th:field="${credentialsForm.password}" placeholder="******"/>
+              <p th:if="${#fields.hasErrors('credentialsForm.password')}" th:errors="${credentialsForm.password}" th:style="'color:#CB3234'"></p>
+            </label>
+
+             <label><i class="fa fa-user"></i> Nome:
+              <input id="firstNameInput" type="text" class="cm-input" th:field="${userForm.firstName}" placeholder="Michael"/>
+              <p th:if="${#fields.hasErrors('userForm.firstName')}" th:errors="${userForm.firstName}" th:style="'color:#CB3234'"></p>
+            </label>
+          
+             <label><i class="fa fa-user"></i> Cognome:
+              <input id="lastNameInput" type="text" class="cm-input" th:field="${userForm.lastName}" placeholder="Smith"/>
+              <p th:if="${#fields.hasErrors('userForm.lastName')}" th:errors="${userForm.lastName}" th:style="'color:#CB3234'"></p>
+            </label>
+
+        <button type="submit" class="btn-login  gr-bg">Registrati</button>
+
+        
+    </form> 
+        </div>
+     </div>
+    </div>
+</section>
 </body>
 </html>

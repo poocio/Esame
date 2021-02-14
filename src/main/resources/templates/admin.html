@@ -4,14 +4,18 @@
       xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>ADMIN PAGE</title>
+    <title>Pagina Admin</title>
+     <link rel="stylesheet"  href="/css/home.css">
 </head>
 <body>
-<h1 th:text="Welcome"></h1>
-<h4><a href="/admin/addPainting">Aggiungi Opera</a></h4>
-<h4><a href="/admin/paintings">Rimuovi Opera</a></h4>
-<h4><a href="/modifyPainting">Modifica Opera</a></h4>
-<h4><a href="/admin/addArtist">Aggiungi Autore</a></h4>
+	<div>
+		<h1 th:text="'Gestisci la galleria '"></h1>
+		<a class="first" href="/admin/addPainting">Aggiungi Opera</a>
+		<a class="second" href="/admin/addArtist">Aggiungi Autore</a>
+		<a class="third" href="/admin/paintings">Rimuovi Opera</a>
+		<a class="fifth" href="/home">Home Page</a>
+		<a class="fourth" href="/admin/artists">Rimuovi Autore</a>
 
+	</div>
 </body>
 </html>

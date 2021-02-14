@@ -1,13 +1,33 @@
 <!DOCTYPE html>
-<html lang="en"
-      xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="https://www.thymeleaf.org">
-<head>
-    <title>Gallery</title>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head>
+    <title>Galleria SIW</title>
+    <link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
-<h1>Welcome to the online gallery!</h1>
-<p> <a href="/login">Login</a></p>
-<p> <a href="/users/register">Register</a></p>
-</body>
-</html>
+	<div class="container">
+		<div class="container_content">
+			<div class="container_content_inner">
+				<div class="title">
+	  				<h1>Benvenuto nella Galleria SIW</h1>
+				</div>
+				<div class="par">
+					<p>Registrati per una meravigliosa esperienza</p>
+				</div>
+				<div class="btns">
+					<a href="/login"><button class="btns_login"> Login </button></a>
+				</div>
+				<div class="btns">
+					<a href="/users/register"><button class="btns_signup">Registrati</button></a>
+				</div>
+			</div>
+		</div>
+ 			<div class="container_outer_img">
+ 				<div class="img-inner">
+ 					<img th:src="@{/img/caravaggio.jpg}" alt="" class="container_img">
+       			</div>
+     		</div>
+  		</div>
+<div class="overlay"></div>
+
+
+</body></html>

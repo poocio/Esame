@@ -14,7 +14,7 @@ public interface PaintingRepository   extends CrudRepository<Painting, Long>{
 
 	public Optional<List<Painting>> findByYear(int year);
 	
-	public Optional<Painting> findByTitle(Painting title);
+	public Optional<Painting> findByTitle(Painting titolo);
 	
 	public Optional<List<Painting>> findByTechnique(String technique);
 	

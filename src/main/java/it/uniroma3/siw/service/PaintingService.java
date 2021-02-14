@@ -25,9 +25,9 @@ public class PaintingService {
 	 protected PaintingRepository paintingRepository;
 	 
 	 @Transactional
-	 public Painting getPainting(Painting title)
+	 public Painting getPainting(Painting titolo)
 	 {
-		 Optional<Painting> result = this.paintingRepository.findByTitle(title);
+		 Optional<Painting> result = this.paintingRepository.findByTitle(titolo);
 		 return result.orElse(null);
 	 }
 	 

@@ -39,6 +39,10 @@ public class ArtistService {
 	     return this.artistRepository.save(artist);
 	 }
 	 
+	 @Transactional
+	 public void delete(long id){
+		 this.artistRepository.deleteById(id);
+		}
 	
 	
 

@@ -47,7 +47,7 @@ public class AdminController {
 	 public String getOpere(Model model) {
 	  List<Painting> paintings = paintingService.findAll();
 	  model.addAttribute("paintings", paintings);
-	  return "paintings";
+	  return "removePaintings";
 	 }
 	 
 	 @RequestMapping(value = "/admin/paintings/{id}/remove", method = RequestMethod.POST)
@@ -56,6 +56,22 @@ public class AdminController {
 		 paintingService.delete(id);
 		 return "redirect:/admin/paintings";
 	    }
+	 
+	 
+	 @RequestMapping(value = "/admin/artists", method = RequestMethod.GET)
+	 public String getArtists(Model model) {
+	  List<Artist> artists = artistService.findAll();
+	  model.addAttribute("artists", artists);
+	  return "removeArtists";
+	 }
+	 
+	 @RequestMapping(value = "/admin/artists/{id}/remove", method = RequestMethod.POST)
+	    public String deleteArtist(@PathVariable long id,
+	     Model model) {
+		 artistService.delete(id);
+		 return "redirect:/admin/artists";
+	    }
+	 
 	 
 	 @RequestMapping(value = "/admin/addPainting", method = RequestMethod.GET)
 	 public String addOpera(Model model) {

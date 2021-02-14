@@ -1,15 +1,70 @@
 <!DOCTYPE html>
-<html lang="en"
-      xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="https://www.thymeleaf.org">
+<html xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sf="http://www.w3.org/1999/xhtml" lang="en">
 <head>
-    <title>Gallery</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Galleria SIW</title>
+    <link rel="stylesheet"  href="/css/formLog.css">
+    <link rel="stylesheet"  href="/css/alert.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    
 </head>
 <body>
-<form th:action="@{/login}" method="post">
-    <div><label> User Name : <input type="text" name="username"/> </label></div>
-    <div><label> Password: <input type="password" name="password"/> </label></div>
-    <div><input type="submit" value="Sign In"/></div>
-</form>
-</body>
+    <a href="/index" class="btn btn-outline-success">Indietro</a>
+<header class="ScriptHeader">
+    <div class="rt-container">
+    	<div class="col-rt-12">
+        	<div class="rt-heading">
+            	<h1>Login</h1>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section>
+    <div class="rt-container">
+          <div class="col-rt-12">
+              <div class="Scriptcontent">
+              
+             
+                <form th:action="@{/login}" method="post" class="codehim-form">
+        <div class="form-title">
+            <div class="user-icon gr-bg">
+            <i class="fa fa-sign-in"></i>
+            </div>
+     <h2>Login</h2>
+            </div>
+            
+        <label for="username"><i class="fa fa-user"></i> Username:</label>
+            <input type="text" id="username" name="username" class="cm-input" placeholder="Inserisci username">
+
+        
+
+        <label for="pass"><i class="fa fa-lock"></i> Password:</label>
+            <input id="pass" type="password" name="password" class="cm-input" placeholder="Inserisci password">
+
+        <button type="submit" class="btn-login  gr-bg">Login</button>
+
+       
+
+          <div th:if="${param.error}" class="screenAlert-icon screenAlert-error animate">
+        <span class="screenAlert-x-mark">
+            <span class="screenAlert-line screenAlert-left animateXLeft"></span>
+            <span class="screenAlert-line screenAlert-right animateXRight"></span>
+        </span>
+        <div class="screenAlert-placeholder"></div>
+        <div class="screenAlert-fix"></div>
+    </div>
+    </form>	
+    		</div>
+		</div>
+    </div>
+</section>
+     
+    
+
+
+
+	</body>
 </html>

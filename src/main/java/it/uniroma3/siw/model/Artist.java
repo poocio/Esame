@@ -2,12 +2,15 @@ package it.uniroma3.siw.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.Size;
+
 
 @Entity
 public class Artist {
@@ -15,26 +18,32 @@ public class Artist {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id; 
-
+	
+	@Size(min=2, max=100, message="Il nome deve essere compreso tra 2 e 100 caratteri")
 	@Column(nullable = false)
 	private String firstName;
-
+	
+	@Size(min=2, max=100, message="Il cognome deve essere compreso tra 2 e 100 caratteri")
 	@Column(nullable = false)
 	private String lastName;
-
+	
+	@Size(min=2, max=100, message="La nazione deve essere compresa tra 2 e 100 caratteri")
 	@Column(nullable = false)
 	private String nation;
-
+	
+	@Size(min=1, message="Campo obbligatorio")
 	private String dateOfBirth;
-
+	
 	private String dateOfDeath;
 	
-	@OneToMany(mappedBy = "artist")
+	
+	@OneToMany(mappedBy = "artist", cascade = CascadeType.ALL)
 	private List<Painting> painting;
 
 	public Artist() {
-
+		
 	}
+	
 
 	public Long getId() {
 		return id;

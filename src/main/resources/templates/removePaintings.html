@@ -8,12 +8,15 @@
 <link rel="stylesheet"  href="/css/list.css">
 </head>
 <body>
-	 <a id="back" href="/researchPainting" class="btn btn-outline-success">Indietro</a>
-	<h1>Visualizza dipinti</h1>
+   <a id="back" href="/admin" class="btn btn-outline-success">Indietro</a>
+	<h1>Rimuovi o visualizza opere</h1>
     <div >
       <ul class="list" th:each="painting : ${paintings}">
         <a th:href="@{'/paintingsById/{id}'(id=${painting.id})}" class="btn btn-outline-success" th:text="${painting.title}">
         </a>
+          <form method="POST" sec:authorize="hasAuthority('ADMIN')" th:action="@{/admin/paintings/{id}/remove(id=${painting.id})}">
+           <button type="submit" class="btn btn-outline-danger" name="submit" value="value"> Elimina </button>                 
+          </form>
       </ul>
     </div>
 </body>
