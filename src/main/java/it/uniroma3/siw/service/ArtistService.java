@@ -20,6 +20,13 @@ public class ArtistService {
 	@Autowired
 	private ArtistRepository artistRepository;
 	
+	 @Transactional
+	 public List<Artist> findByFirstName(String firstName)
+	 {
+		 Optional<List<Artist>> result = this.artistRepository.findByFirstName(firstName);
+		 return result.orElse(null);
+	 }
+	
 	@Transactional
 	public Artist findById(Long id){
 		Optional<Artist> result = artistRepository.findById(id);

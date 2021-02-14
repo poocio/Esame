@@ -15,6 +15,8 @@ import javax.validation.constraints.Size;
 @Entity
 public class Artist {
 
+	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id; 
@@ -104,7 +106,55 @@ public class Artist {
 	
 	
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((dateOfBirth == null) ? 0 : dateOfBirth.hashCode());
+		result = prime * result + ((dateOfDeath == null) ? 0 : dateOfDeath.hashCode());
+		result = prime * result + ((firstName == null) ? 0 : firstName.hashCode());
+		result = prime * result + ((lastName == null) ? 0 : lastName.hashCode());
+		result = prime * result + ((nation == null) ? 0 : nation.hashCode());
+		return result;
+	}
 
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Artist other = (Artist) obj;
+		if (dateOfBirth == null) {
+			if (other.dateOfBirth != null)
+				return false;
+		} else if (!dateOfBirth.equals(other.dateOfBirth))
+			return false;
+		if (dateOfDeath == null) {
+			if (other.dateOfDeath != null)
+				return false;
+		} else if (!dateOfDeath.equals(other.dateOfDeath))
+			return false;
+		if (firstName == null) {
+			if (other.firstName != null)
+				return false;
+		} else if (!firstName.equals(other.firstName))
+			return false;
+		if (lastName == null) {
+			if (other.lastName != null)
+				return false;
+		} else if (!lastName.equals(other.lastName))
+			return false;
+		if (nation == null) {
+			if (other.nation != null)
+				return false;
+		} else if (!nation.equals(other.nation))
+			return false;
+		return true;
+	}
 
 
 

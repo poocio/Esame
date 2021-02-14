@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import it.uniroma3.siw.controller.session.SessionData;
+import it.uniroma3.siw.controller.validation.ArtistValidator;
+import it.uniroma3.siw.controller.validation.PaintingValidator;
 import it.uniroma3.siw.model.Artist;
 import it.uniroma3.siw.model.Painting;
 import it.uniroma3.siw.model.User;
@@ -32,6 +34,12 @@ public class AdminController {
 	 
 	 @Autowired
 		private ArtistService artistService;
+	 
+	 @Autowired
+	 private PaintingValidator paintingValidator;
+	 
+	 @Autowired
+	 private ArtistValidator artistValidator;
 	 
 	
 	 @RequestMapping(value = { "/admin" }, method = RequestMethod.GET)
@@ -87,7 +95,9 @@ public class AdminController {
 	 @RequestMapping( value = "/admin/addPainting", method = RequestMethod.POST)
 	  public String checkOperaInfo(@Valid @ModelAttribute Painting painting, 
 	    									BindingResult bindingResult, Model model) {
-	    	
+		 
+		 this.paintingValidator.validate(painting, bindingResult);
+		 
 	        if (bindingResult.hasErrors()) {
 	        	List<Artist> artists = artistService.findAll();
 	            model.addAttribute("artists", artists);
@@ -112,7 +122,9 @@ public class AdminController {
 	 @RequestMapping( value = "/admin/addArtist", method = RequestMethod.POST)
 	  public String checkArtistInfo(@Valid @ModelAttribute Artist artist, 
 	    									BindingResult bindingResult, Model model) {
-	    	
+		 
+		 this.artistValidator.validate(artist, bindingResult);	
+		 
 	        if (bindingResult.hasErrors()) {
 	        	
 	            return "addArtist";
