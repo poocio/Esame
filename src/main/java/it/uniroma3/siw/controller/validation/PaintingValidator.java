@@ -36,14 +36,14 @@ public class PaintingValidator implements Validator {
 	  Artist autore = opera.getArtist();
 
 
-	  if (tecnica.isBlank())
+	  if (tecnica==null || tecnica.trim().isEmpty())
 	   errors.rejectValue("technique", "required");
 	  else if (tecnica.length() < MIN_NAME_LENGTH || tecnica.length() > MAX_NAME_LENGTH)
 	   errors.rejectValue("technique", "size");
 	  else if(ricercaDoppione(opera))
 	   errors.rejectValue("title", "duplicate");
 
-	  if (titolo.isBlank())
+	  if (titolo==null || titolo.trim().isEmpty())
 	   errors.rejectValue("title", "required");
 	  else if (titolo.length() < MIN_NAME_LENGTH || titolo.length() > MAX_NAME_LENGTH)
 	   errors.rejectValue("title", "size");

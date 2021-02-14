@@ -36,18 +36,18 @@ public class ArtistValidator implements Validator {
 	  String lastName = artist.getLastName().trim();
 	  String nation = artist.getNation();
 
-	  if (firstName.isBlank())
+	  if (firstName==null || firstName.trim().isEmpty())
 		   errors.rejectValue("firstName", "required");
 		  else if (firstName.length() < MIN_NAME_LENGTH || firstName.length() > MAX_NAME_LENGTH)
 		   errors.rejectValue("firstName", "size");
 		  
 
-		  if (lastName.isBlank())
+	  if (lastName==null || lastName.trim().isEmpty())
 		   errors.rejectValue("lastName", "required");
 		  else if (lastName.length() < MIN_NAME_LENGTH || lastName.length() > MAX_NAME_LENGTH)
 		   errors.rejectValue("lastName", "size");
 		  
-		  if (nation.isBlank())
+	  if (nation==null || nation.trim().isEmpty())
 		   errors.rejectValue("nation", "required");
 		  else if (nation.length() < MIN_NAME_LENGTH || nation.length() > MAX_NAME_LENGTH)
 		   errors.rejectValue("nation", "size");
