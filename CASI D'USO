@@ -1,0 +1,59 @@
+CASI D'USO:
+
+CASO D'USO UC0:	REGISTRAZIONE / LOGIN 		Attore Primario:	Utente generico, Admin
+
+	•	Se l’utente è in possesso delle sue credenziali accede alla home page
+	•	Se l’utente è nuovo, si registra per poi accedere alla home page
+
+
+CASO D'USO UC1:	VISUALIZZAZIONE OPERE DI UN AUTORE 		Attore Primario:	Utente generico, Admin
+
+	•	Dalla home page l’utente seleziona il percorso “RICERCA UN DIPINTO”
+	•	Continuerà selezionando il percorso “RICERCA PER AUTORE”
+	•	Deciderà a proprio piacimento l’autore selezionando il collegamento al fianco di esso  “Opere”
+	•	Infine, sempre a proprio piacimento, selezionerà una tra le opere dell’autore tramite il collegamento “Opera”
+
+
+CASO D'USO UC2:	VISUALIZZAZIONE OPERE DI UN ANNO 		Attore Primario:	Utente generico, Admin
+
+	•	Dalla home page l’utente seleziona il percorso “RICERCA UN DIPINTO”
+	•	Continuerà selezionando il percorso “RICERCA PER ANNO”
+	•	Deciderà a proprio piacimento l’anno selezionando il collegamento al fianco di esso  “Opere”
+	•	Infine, sempre a proprio piacimento, selezionerà una tra le opere di quell’anno tramite il collegamento “Opera”
+
+
+CASO D'USO UC3:	VISUALIZZAZIONE DI TUTTE LE OPERE 		Attore Primario:	Utente generico, Admin
+
+	•	Dalla home page l’utente seleziona il percorso “RICERCA UN DIPINTO”
+	•	Continuerà selezionando il percorso “TUTTI I DIPINTI”
+	•	Deciderà a proprio piacimento l’opera selezionando il nome nonché il relativo collegamento ad essa
+
+
+CASO D'USO UC4:	AGGIUNTA DI UN’OPERA NELLA GALLERIA 		Attore Primario:	Admin
+
+	•	Dalla home page l’utente Admin seleziona il percorso “PAGINA ADMIN”
+	•	Continuerà selezionando il percorso “AGGIUNGI OPERA”
+	•	Se l’autore dell’opera è già presente nel sistema, compilerà il form inserendo i dati dell’opera e selezionerà infine “Invia”
+	•	Se l’autore dell’opera non è presente nel sistema, cliccherà sull’apposito collegamento “Aggiungi un nuovo autore” pero poi tornare ad inserire i dati dell’opera con l’autore registrato nel sistema
+
+
+CASO D'USO UC5:	ELIMINAZIONE DI UN’OPERA DALLA GALLERIA		 Attore Primario:	Admin
+
+	•	Dalla home page l’utente Admin seleziona il percorso “PAGINA ADMIN”
+	•	Continuerà selezionando il percorso “RIMUOVI OPERA”
+	•	Selezionerà il relativo collegamento “Elimina” posto al di sotto di ogni opera presente nel sistema
+
+
+CASO D'USO UC6:	AGGIUNTA DI UN AUTORE NELLA GALLERIA 		Attore Primario:	Admin
+
+	•	Dalla home page l’utente Admin seleziona il percorso “PAGINA ADMIN”
+	•	Continuerà selezionando il percorso “AGGIUNGI AUTORE”
+	•	Compilerà il form inserendo i dati dell’autore e selezionerà infine “Invia”
+	•	Sarà automaticamente reindirizzato alla pagina “AGGIUNGI OPERA”
+
+
+CASO D'USO UC7:	ELIMINAZIONE DI UN AUTORE DALLA GALLERIA 		Attore Primario:	Admin
+
+	•	Dalla home page l’utente Admin seleziona il percorso “PAGINA ADMIN”
+	•	Continuerà selezionando il percorso “RIMUOVI AUTORE”
+	•	Selezionerà il relativo collegamento “Elimina” posto al di sotto di ogni autore presente nel sistema, questa azione eliminerà tutte le opere presenti nel sistema dell’autore in questione
