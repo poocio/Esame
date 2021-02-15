@@ -12,7 +12,7 @@
 	<h1>Rimuovi o visualizza gli autori</h1>
     <div >
       <ul class="list" th:each="artist : ${artists}">
-        <a th:href="@{'/artistById/{id}'(id=${artist.id})}" class="btn btn-outline-success" th:text="${artist.firstName}">
+        <a th:href="@{'/artistById/{id}'(id=${artist.id})}" class="btn btn-outline-success" th:text="${artist.firstName}+ ' ' +${artist.lastName}">
         </a>
           <form method="POST" sec:authorize="hasAuthority('ADMIN')" th:action="@{/admin/artists/{id}/remove(id=${artist.id})}">
            <button type="submit" class="btn btn-outline-danger" name="submit" value="value"> Elimina </button>                 
