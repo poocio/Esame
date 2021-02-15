@@ -21,7 +21,7 @@
                                  <label>Nome</label>                                                                
                                  <div th:classappend="${#fields.hasErrors('firstName')} ? 'input-icon right' : ''">
                                      <i th:if="${#fields.hasErrors('firstName')}" class="fa fa-exclamation tooltips" data-original-title="Il nome deve essere compreso tra 2 e 100 caratteri" data-container="body"></i>
-                                     <input type="text" class="cm-input" maxlength="32" th:field="*{firstName}" placeholder="Tra 2 e 100 caratteri"/>
+                                     <input type="text" class="cm-input" maxlength="100" th:field="*{firstName}" placeholder="Tra 2 e 100 caratteri"/>
                                      <span th:if="${#fields.hasErrors('firstName')}" class="help-block" th:errors="*{firstName}"></span>
                                  </div>
                              </div>                                                                                               
@@ -29,7 +29,7 @@
                                  <label>Cognome</label>                                                                
                                  <div th:classappend="${#fields.hasErrors('lastName')} ? 'input-icon right' : ''">
                                      <i th:if="${#fields.hasErrors('lastName')}" class="fa fa-exclamation tooltips" data-original-title="Il cognome deve essere compreso tra 2 e 100 caratteri" data-container="body"></i>
-                                     <input type="text" class="cm-input" maxlength="10" th:field="*{lastName}" placeholder="Tra 2 e 100 caratteri"/>
+                                     <input type="text" class="cm-input" maxlength="100" th:field="*{lastName}" placeholder="Tra 2 e 100 caratteri"/>
                                      <span th:if="${#fields.hasErrors('lastName')}" class="help-block" th:errors="*{lastName}"></span>
                                  </div>
                              </div>                                               
@@ -37,7 +37,7 @@
                                  <label>Nazione</label>                                                                
                                  <div th:classappend="${#fields.hasErrors('nation')} ? 'input-icon right' : ''">
                                      <i th:if="${#fields.hasErrors('nation')}" class="fa fa-exclamation tooltips" data-original-title="La nazione deve essere compresa tra 2 e 100 caratteri" data-container="body"></i>
-                                     <input type="text" class="cm-input" maxlength="10" th:field="*{nation}" placeholder="Tra 2 e 100 caratteri"/>
+                                     <input type="text" class="cm-input" maxlength="100" th:field="*{nation}" placeholder="Tra 2 e 100 caratteri"/>
                                      <span th:if="${#fields.hasErrors('nation')}" class="help-block" th:errors="*{nation}"></span>
                                  </div>
                              </div>  
@@ -45,7 +45,7 @@
                                  <label>Data di nascita</label>                                                                
                                  <div th:classappend="${#fields.hasErrors('dateOfBirth')} ? 'input-icon right' : ''">
                                      <i th:if="${#fields.hasErrors('dateOfBirth')}" class="fa fa-exclamation tooltips" data-original-title="Campo obbligatorio" data-container="body"></i>
-                                     <input type="date" class="cm-input" maxlength="10" th:field="*{dateOfBirth}" placeholder="Between 1 and 32 characters"/>
+                                     <input type="date" class="cm-input" maxlength="100" th:field="*{dateOfBirth}" placeholder="Between 1 and 32 characters"/>
                                      <span th:if="${#fields.hasErrors('dateOfBirth')}" class="help-block" th:errors="*{dateOfBirth}"></span>
                                  </div>
                              </div> 
@@ -53,7 +53,7 @@
                                  <label>Data di morte</label>                                                                
                                  <div th:classappend="${#fields.hasErrors('dateOfDeath')} ? 'input-icon right' : ''">
                                      <i th:if="${#fields.hasErrors('dateOfDeath')}" class="fa fa-exclamation tooltips" data-original-title="Inserisci una data valdia" data-container="body"></i>
-                                     <input type="date" class="cm-input" maxlength="10" th:field="*{dateOfDeath}" placeholder="Between 1 and 32 characters"/>
+                                     <input type="date" class="cm-input" maxlength="100" th:field="*{dateOfDeath}" placeholder="Between 1 and 32 characters"/>
                                      <span th:if="${#fields.hasErrors('dateOfDeath')}" class="help-block" th:errors="*{dateOfDeath}"></span>
                                  </div>
                              </div> 

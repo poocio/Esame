@@ -21,7 +21,7 @@
                                  <label>Titolo</label>                                                                
                                  <div th:classappend="${#fields.hasErrors('title')} ? 'input-icon right' : ''">
                                      <i th:if="${#fields.hasErrors('title')}" class="fa fa-exclamation tooltips" data-original-title="please enter a valid title" data-container="body"></i>
-                                     <input type="text" class="cm-input" maxlength="32" th:field="*{title}" placeholder="Tra 2 e 100 caratteri"/>
+                                     <input type="text" class="cm-input" maxlength="100" th:field="*{title}" placeholder="Tra 2 e 100 caratteri"/>
                                      <span th:if="${#fields.hasErrors('title')}" class="help-block" th:errors="*{title}"></span>
                                  </div>
                              </div>                                                                                              
@@ -29,7 +29,7 @@
                                  <label>Anno</label>                                                                
                                  <div th:classappend="${#fields.hasErrors('year')} ? 'input-icon right' : ''">
                                      <i th:if="${#fields.hasErrors('year')}" class="fa fa-exclamation tooltips" data-original-title="please enter a valid number for the Year field" data-container="body"></i>
-                                     <input type="number" class="cm-input" maxlength="10" th:field="*{year}" placeholder="A number between 1 and 10"/>
+                                     <input type="number" class="cm-input" maxlength="100" th:field="*{year}" placeholder="A number between 1 and 10"/>
                                      <span th:if="${#fields.hasErrors('year')}" class="help-block" th:errors="*{year}"></span>
                                  </div>
                              </div>                                               
@@ -37,7 +37,7 @@
                                  <label>Dimensione</label>                                                                
                                  <div th:classappend="${#fields.hasErrors('size')} ? 'input-icon right' : ''">
                                      <i th:if="${#fields.hasErrors('size')}" class="fa fa-exclamation tooltips" data-original-title="please enter a valid size" data-container="body"></i>
-                                     <input type="text" class="cm-input" maxlength="10" th:field="*{size}" placeholder="Tra 2 e 100 caratteri"/>
+                                     <input type="text" class="cm-input" maxlength="100" th:field="*{size}" placeholder="Tra 2 e 100 caratteri"/>
                                      <span th:if="${#fields.hasErrors('size')}" class="help-block" th:errors="*{size}"></span>
                                  </div>
                              </div>  
@@ -45,7 +45,7 @@
                                  <label>Tecnica</label>                                                                
                                  <div th:classappend="${#fields.hasErrors('technique')} ? 'input-icon right' : ''">
                                      <i th:if="${#fields.hasErrors('technique')}" class="fa fa-exclamation tooltips" data-original-title="please enter a valid technique" data-container="body"></i>
-                                     <input type="text" class="cm-input" maxlength="10" th:field="*{technique}" placeholder="Tra 2 e 100 caratteri"/>
+                                     <input type="text" class="cm-input" maxlength="100" th:field="*{technique}" placeholder="Tra 2 e 100 caratteri"/>
                                      <span th:if="${#fields.hasErrors('technique')}" class="help-block" th:errors="*{technique}"></span>
                                  </div>
                              </div> 
