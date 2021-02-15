@@ -22,10 +22,9 @@ body {
 .container {
 	position: absolute;
 	top: 50%;
-	left: 86.5%;
+	left: 65%;
 	transform: translate(-50%, -50%);
-	margin-top:190px;
-	max-height: 100px;
+	max-height: 900px;
     height: 100%;
 
 }
@@ -35,7 +34,9 @@ table {
 	border-collapse: collapse;
 	overflow: hidden;
 	box-shadow: 0 0 20px rgba(0,0,0,0.1);
-	margin-top:-420px;
+	margin-top:180px;
+	max-height:180px;
+	margin-left:250px;
 }
 
 th,
@@ -61,7 +62,6 @@ thead {
 
 tbody {
 	tr {
-
 		&:hover {
 			background-color: rgba(255,255,255,0.3);
 		}
@@ -93,4 +93,3 @@ tbody {
 	background-color:#8BC34A;
 	color:black;
 }
-
