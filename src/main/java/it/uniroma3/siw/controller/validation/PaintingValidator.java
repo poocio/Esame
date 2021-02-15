@@ -33,7 +33,7 @@ public class PaintingValidator implements Validator {
 	  Painting opera = (Painting) o;
 	  String tecnica = opera.getTechnique().trim();
 	  String titolo = opera.getTitle().trim();
-	  Artist autore = opera.getArtist();
+	  String dimensione = opera.getSize().trim();
 
 
 	  if (tecnica==null || tecnica.trim().isEmpty())
@@ -47,6 +47,11 @@ public class PaintingValidator implements Validator {
 	   errors.rejectValue("title", "required");
 	  else if (titolo.length() < MIN_NAME_LENGTH || titolo.length() > MAX_NAME_LENGTH)
 	   errors.rejectValue("title", "size");
+	  
+	  if (dimensione==null || dimensione.trim().isEmpty())
+		   errors.rejectValue("size", "required");
+		  else if (dimensione.length() < MIN_NAME_LENGTH || titolo.length() > MAX_NAME_LENGTH)
+		   errors.rejectValue("size", "size");
 
 	 }
 	 private boolean ricercaDoppione(Painting o) {
