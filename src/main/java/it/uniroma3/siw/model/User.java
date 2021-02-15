@@ -1,6 +1,5 @@
 package it.uniroma3.siw.model;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -25,11 +24,6 @@ public class User {
 	
 	@Column(nullable = false)
 	private String lastName;
-	
-	private LocalDateTime creationTimestamp;
-	
-	private LocalDateTime lastUpdateTimestamp;
-
 	
 	@OneToOne
 	private Painting paintingModify;
@@ -77,30 +71,6 @@ public class User {
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
-	}
-
-
-
-	public LocalDateTime getCreationTimestamp() {
-		return creationTimestamp;
-	}
-
-
-
-	public void setCreationTimestamp(LocalDateTime creationTimestamp) {
-		this.creationTimestamp = creationTimestamp;
-	}
-
-
-
-	public LocalDateTime getLastUpdateTimestamp() {
-		return lastUpdateTimestamp;
-	}
-
-
-
-	public void setLastUpdateTimestamp(LocalDateTime lastUpdateTimestamp) {
-		this.lastUpdateTimestamp = lastUpdateTimestamp;
 	}
 
 
